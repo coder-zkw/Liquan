@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign in</title>
+<style>
+	body{ font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;font-size: 14px;margin:0;background-color: #1e90ff;}
+	p,div,span{padding: 0;margin: 0;}
+	.sign{
+		width:600px;
+		height: 400px;
+		border: 1px solid #ccc;
+		background-color: #1e90ff;
+		border-radius: 7px;
+		box-shadow:-1px 0 20px #eee, 1px 0 20px #eee, 0 -1px 20px #eee, 0 1px 20px #eee;
+		color:#fff;
+	}
+	.login{
+		position: absolute;
+		left:50%;
+		top:50%;
+		margin-left: -301px;
+		margin-top: -201px;
+	}
+	.sign p{
+		margin-top: 50px;
+		margin-left: 135px;
+	}
+	.sign div{
+		margin:20px  188px;
+	}
+	.sign p input{
+		width:240px;
+		height: 25px;
+		border-radius: 6px;
+		text-indent: 5px;
+	}
+	.set input{
+		width:64px;
+		margin: 20px 18px;
+	}
+	.sign input{
+		outline: none;
+	}
+	.sign span{
+		font-size: 12px;
+		color:red;
+		margin-left: 10px;
+	}
+	.sign .head{
+		margin:4px;
+		padding: 8px;
+		font-size: 22px;
+		text-indent: 2em;
+		border-radius: 6px 6px 0 0;
+		background-color: #258;
+	}
+</style>
+</head>
+<body>
+	<div class="login">
+		<div class="sign">
+				<div class="head">用户登录管理系统</div>
+				<p class="first">账&nbsp;&nbsp;&nbsp;&nbsp;号：
+					<input type="text" name="user" class="user"><span></span>
+				</p>
+				<p>密&nbsp;&nbsp;&nbsp;&nbsp;码：
+					<input type="password" name="password" class="pass"><span></span>
+				</p>
+				<div><span></span></div>
+				<div class="set">
+					<input type="submit" value="登录">
+					<input type="reset" value="取消">
+				</div>
+		</div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$(".set input[type='submit']").click(function() {
+			login();
+		})
+		$(document).keydown(function(event) {  
+         	if (event.keyCode == 13) { 
+             	login();
+         	}  
+     	})  
+
+		function login() {
+			if($(".sign p input[type='text']").val() == ""){
+				alert("账号不能为空");	
+			}else if($(".sign p input[type='password']").val() == ""){
+				alert("密码不能为空");	
+			}else{
+				$.ajax({
+					url:'Login1.php',
+					data:'user='+$(".user").val()+'&password='+$(".pass").val(),
+					type:'GET',
+					success:function(str) {
+						if(str == 1){
+							window.location.href = "manage.html";
+						}else{
+							alert("账号或密码错误！请重新输入");
+						}
+					},
+					error:function(err) {
+						alert(err);
+					}
+				})
+			}
+		}
+	})
+</script>
+</body>
+</html>

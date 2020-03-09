@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>产品测试方案</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/basic.css">
+<style>
+	.box{border:1px solid #bbb;border-radius:3px;text-align: center;padding:5px;overflow: hidden;}
+	.box>a>img{width: 190px;}
+	.morebox{overflow: hidden;}
+	img{padding:0;transition: all 500ms;}
+	.box:hover img,.morebox:hover img{transform: scale(1.2);}
+	.m_left{margin-left: 20px;}
+	.h4,.h4>a{color:#4178be;}
+	.more{margin:20px auto;width:120px;height:40px;border: 3px solid #999;border-radius: 3px;text-align: center;line-height: 36px;}
+	.borders{border-bottom: 1px dotted #4178be;}
+	.probox{
+		width:260px;
+		display: inline-block;
+		margin-right: 21px;
+	}
+	.probox a{cursor:pointer;}
+</style>
+<!--[if IE 8]>
+	<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+<body onload="ajax();">
+	<div class="headtop hidden-xs hidden-sm">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10"><i class="glyphicon glyphicon-phone-alt"></i> 热线电话：+86-0755-86230648 | 13602589060 
+					<span class="qq"><a target="blank" href="tencent://message/?uin=765803545&Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:765803545:41" alt="发送消息!"></a></span>
+					<span class="wei"><i></i></span>
+					<a class="tao" href="https://shop235274273.taobao.com/?spm=a230r.7195193.1997079397.2.25103af5dx5Oij" target="blank" title="淘宝小店"></a>
+					<a class="jing" href="javascript:void(0)" target="blank" title="敬待开业"></a>
+					<a class="tian" href="javascript:void(0)" target="blank" title="敬待开业"></a>
+				</div>
+				<div class="col-md-2">
+					<span class="eng"></span>
+					<span class="zhong"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 hidden-xs">
+					<a href="index.html"><img src="images/logo.png" alt="立全鼎盛"></a>
+				</div>
+				<div class="col-md-1">
+					<span><a href="index.html">首页</a></span>
+					<span class="close"><i class="glyphicon glyphicon-remove"></i></span>
+				</div>
+				<div class="col-md-1">
+					<span><a href="about.html">关于我们</a></span>
+					<ul>
+						<li><a href="about.html">公司简介</a></li>
+						<li><a href="history.html">公司历程</a></li>
+						<li><a href="honor.html">资质荣誉</a></li>
+					</ul>
+				</div>
+				<div class="col-md-1"><span><a href="news.html">新闻中心</a></span></div>
+				<div class="col-md-1"><span><a href="RD.html">研发支持</a></span></div>
+				<div class="col-md-1">
+					<span><a href="proCenter.html">产品中心</a></span>
+					<ul>
+						<li><a href="proCenter.html">产品设计方案</a></li>
+						<li><a href="test.html">产品测试方案</a></li>
+						<li><a href="module.html">核心功能模块</a></li>
+					</ul>
+				</div>
+				<div class="col-md-1"><span><a href="recruit.html">加入我们</a></span></div>
+				<div class="col-md-1">
+					<span><a href="contact.html">联系我们</a></span>
+					<ul>
+						<li><a href="contact.html">公司与办事处</a></li>
+						<li><a href="cooperation.html">商务合作</a></li>
+						<li><a href="feedback.html">问题反馈</a></li>
+					</ul>
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="icon"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+		</div>
+	</div>
+	<!-- nav over -->
+	<!-- content start -->
+	<div class="wrap">
+		<div class="place">
+			<div class="container">
+				<i class="glyphicon glyphicon-home"></i> 当前位置：
+				<span><a href="index.html">首页</a></span> - <a href="proCenter.html">产品中心</a> - 产品测试方案
+			</div>
+		</div>
+		<img src="images/ceshi.jpg" alt="合作共赢">
+		<div class="container">
+			<!-- iTester -->
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 网络测试仪：</div>
+			<p>我司供应的iTester系列网络测试仪，其测试带宽涵盖：10M、100M、1000M、2.5G、5G、10G、25G、40G、100G，可测试L2-L7通信协议和做协议仿真，是中国自主创新产品，具有完全自主知识产权，是我司搭建通信产品测试方案的重要组成部分。</p>
+			<p>iTester系列网络测试仪，能够测试光纤收发器、SFP光模块、交换机、路由器、G/EPON、EoC、DSLAM、PLC、MSTP等通信产品。按测试能力，可分为：简便型、生产型、研发型、全能型，四个级别；按可支持板卡数，主机可分为：2槽位主机、6槽位主机、12插槽主机；板卡可支持端口数有：2端口、4端口、8端口、12端口、16端口。iTester系列网络测试仪是一套测试项目全面、高效自动化的测试系统，在业内与Spirent、IXIA、Nustream同负盛名，但高性价比更高，目前已是国内占有率最为领先的网络测试仪品牌。</p>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="itester borders">
+				<div class="probox">
+					<div class="h4 text-center"><a href="bigtao210.html">BigTao210 （生产型）</a></div>
+					<div class="box bgThtee">
+						<a href="bigtao210.html"><img src="images/bigtao220.jpg" alt="bigtao220"></a>
+					</div>
+					<div class="more"><a href="bigtao210.html">了解更多</a></div>
+				</div>
+				<div class="probox">
+					<div class="h4 text-center"><a href="bigtao220.html">BigTao220 （研发型）</a></div>
+					<div class="box bgThtee">
+						<a href="bigtao220.html"><img src="images/bigtao220.jpg" alt="bigtao220"></a>
+					</div>
+					<div class="more"><a href="bigtao220.html">了解更多</a></div>
+				</div>
+				<div class="probox">
+					<div class="h4 text-center"><a href="teststorm200.html">TestStorm200 （全能型）</a></div>
+					<div class="box bgThtee">
+						<a href="teststorm200.html"><img src="images/teststorm200.jpg" alt="teststorm200"></a>
+					</div>
+					<div class="more"><a href="teststorm200.html">了解更多</a></div>
+				</div>
+			</div>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 数字示波器：</div>
+			<p>数字示波器是任何设计、制造和维修电子设备的工程师的必备仪器。电子工程师们在日常工作中利用操作方便、测量精准的数字示波器观测各种模拟、数字信号，发现问题，解决问题，面对当今的各种设计，调试的挑战。如何选用性能优异、价格合理的仪器是每位主管和工程师要面对的问题。</p>
+			<p>作为国内领先的数字示波器设计，生产和销售厂家，在十几年的时间内先后推出了五代数字示波器产品，取得多个国内行业的第一，如最早的300MHz带宽台式示波器；最高采样率达2GSa/s，波形捕获率达2000wfms/s的数字示波器；首先突破1M存储深度的数字示波器；带宽达1GHz,最高采样率达5GSa/s，波形捕获率达180,000wfms/s，存储深度达140M的数字示波器等等。为适应不同客户需求，RIGOL数字示波器逐渐形成DS1000E、DS1000D、DS1000CA、DS1000B和DS6000几个不同的系列，满足不同用户的需求，帮助工程师们提高测试效率。</p>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="shiboqi m_top borders">
+			
+			</div>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 函数任意波形发生器：</div>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="fashengqi m_top borders">
+				
+			</div>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 	数字万用表：</div>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="wanyongbiao borders">
+				
+			</div>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 	可编程线性电源：</div>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="dianyuan borders">
+				
+			</div>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 	频谱分析仪：</div>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="fenxi borders">
+				
+			</div>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 	高效液相色谱系统：</div>
+			<div class="h5 m_top"><b><i class="glyphicon glyphicon-tags"></i>  产品展示：</b></div>
+			<div class="sepu borders">
+				
+			</div>
+		</div>
+	</div>
+	<!-- content over -->
+	<div class="hidden-xs hidden-sm">
+		<div class="ge m_top">
+			<div class="container">
+				<p>Copyright © 2019 Inc. 深圳市立全鼎盛科技有限公司 版权所有  <a href="http://www.beian.miit.gov.cn" target="blank">粤ICP备20009652号</a></p>
+				<p>深圳公司：深圳市南山区西丽街道留仙大道2188号天悦湾花园A座二楼，电话：+86-0755-86230648，传真：+86-0755-86237869，投诉：13602589060</p>
+				<p>香港分公司：香港九龙黄大仙区斑凤楼2018室，电话：+852-35928633，传真：+852-35928635 ，邮址：info@ritern.com</p>
+				<div class="guanzhu">
+					<p>关注我们</p>
+					<a href="https://shop235274273.taobao.com/?spm=a230r.7195193.1997079397.2.25103af5dx5Oij" target="blank"><img src="images/tao.jpg" alt="淘宝店铺"></a>
+					<a class="deng" href="javascript:void(0)" target="blank"><img src="images/jing.jpg" alt="京东店铺" title="敬待开业"></a>
+					<a class="deng" href="javascript:void(0)" target="blank"><img src="images/tian.jpg" alt="天猫店铺" title="敬待开业"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/public.js"></script>
+<script src="js/test.js"></script>
+</body>
+</html>

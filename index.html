@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>立全鼎盛</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/basic.css">
+<style>
+	.headwrap{width:100%;position: absolute;z-index: 100;color:#fff;}
+	.headwrap .col-md-1>span{display: inline-block;height: 100%;}
+	.headwrap .col-md-1>span>a{color:#fff;display: inline-block;height: 100%;background:url(#);}
+	.carousel-caption{top:260px;z-index: 0;}
+	.word{
+		font-size:60px;
+		text-shadow: 3px 3px 5px #222;
+	}
+	.box{background: #545d66;text-align: center;padding:25px;overflow: hidden; transform:translateY(100px);}
+	.bgOne{background: #5c5d62;}
+	.bgTwo{background: #3d3b3c;}
+	.bgThtee{background: #798093;}
+	.bgFour{background: #627fb7;}
+	.bgFive{background: #67343d;}
+	.morebox{overflow: hidden;}
+	img{padding:0;transition: all 800ms;}
+	.box:hover a>img,.morebox:hover a>img{transform: scale(1.1);}
+	.kouhao{padding-top: 40px;}
+	.more{margin:20px auto;width:140px;height:46px;border: 3px solid #999;border-radius: 3px;text-align: center;line-height: 40px;}
+	.prowrap a{display: block;}
+	.bg-large{
+		width: 100%;
+		min-height: 500px;
+		margin-top: 40px;
+		background: url(images/bg.jpg) repeat fixed bottom center;
+		background-size: cover;
+	}
+	.bg-large img{margin: 115px 30%;}
+	#demo img{border: 1px solid #eee;}
+</style>
+	<!-- IE9以上，或非IE执行以下代码 -->
+    <!--[if (gt IE 9)|!(IE)]><!--> 
+    	<style>
+    		.box{opacity: 0;}
+    		.xuanze{transform:translateY(100px);opacity: 0;}
+			.xuanze.active{
+				animation: upto 1s ease forwards;
+			}
+		    .box.active{
+				animation: upto 1s ease forwards;
+			}
+			.box.active.delay200{
+				animation: upto 1s ease 200ms forwards;
+			}
+			.box.active.delay400{
+				animation: upto 1s ease 400ms forwards;
+			}
+			@keyframes upto{
+				from{transform:translateY(100px);
+					opacity: 0;}
+				to{transform:translateY(0px);
+					opacity: 1;}
+			}
+    	</style>
+    <!--<![endif]-->
+    <!--[if IE 8]>
+    	<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      	<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="headwrap">
+		<div class="headtop hidden-xs hidden-sm">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10"><i class="glyphicon glyphicon-phone-alt"></i> 热线电话：+86-0755-86230648 | 13602589060 
+						<span class="qq"><a target="blank" href="tencent://message/?uin=765803545&Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:765803545:41" alt="发送消息!"></a></span>
+						<span class="wei"><i></i></span>
+						<a class="tao" href="https://shop235274273.taobao.com/?spm=a230r.7195193.1997079397.2.25103af5dx5Oij" target="blank" title="淘宝小店"></a>
+						<a class="jing" href="javascript:void(0)" target="blank" title="敬待开业"></a>
+						<a class="tian" href="javascript:void(0)" target="blank" title="敬待开业"></a>
+					</div>
+					<div class="col-md-2">
+						<span class="eng"></span>
+						<span class="zhong"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 hidden-xs">
+						<a href="index.html"><img src="images/logo2.png" alt="立全鼎盛"></a>
+					</div>
+					<div class="col-md-1">
+						<span><a href="index.html">首页</a></span>
+						<span class="close"><i class="glyphicon glyphicon-remove"></i></span>
+					</div>
+					<div class="col-md-1">
+						<span><a href="about.html">关于我们</a></span>
+						<ul>
+							<li><a href="about.html">公司简介</a></li>
+							<li><a href="history.html">公司历程</a></li>
+							<li><a href="honor.html">资质荣誉</a></li>
+						</ul>
+					</div>
+					<div class="col-md-1"><span><a href="news.html">新闻中心</a></span></div>
+					<div class="col-md-1"><span><a href="RD.html">研发支持</a></span></div>
+					<div class="col-md-1">
+						<span><a href="proCenter.html">产品中心</a></span>
+						<ul>
+							<li><a href="proCenter.html">产品设计方案</a></li>
+							<li><a href="test.html">产品测试方案</a></li>
+							<li><a href="module.html">核心功能模块</a></li>
+						</ul>
+					</div>
+					<div class="col-md-1"><span><a href="recruit.html">加入我们</a></span></div>
+					<div class="col-md-1">
+						<span><a href="contact.html">联系我们</a></span>
+						<ul>
+							<li><a href="contact.html">公司与办事处</a></li>
+							<li><a href="cooperation.html">商务合作</a></li>
+							<li><a href="feedback.html">问题反馈</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="icon"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+		</div>
+	</div>
+	<!-- banner -->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  		<ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+		</ol>
+	  	<div class="carousel-inner" role="listbox">
+	    	<div class="item active">
+	      		<img src="images/ban1.jpg" alt="方案设计、测试供应商">
+	    	</div>
+		    <div class="item">
+		      	<img src="images/ban2.jpg" alt="产品设计方案">
+		    </div>
+		    <div class="item">
+		      	<img src="images/ban3.jpg" alt="产品测试方案">
+		    </div>
+		    <div class="item">
+		      	<img src="images/ban4.jpg" alt="核心模块">
+		    </div>
+		</div>
+	  	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only"></span>
+	  	</a>
+	  	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only"></span>
+	  	</a>
+	</div>
+	<!-- banner over -->
+	<div class="prowrap">
+		<div class="row m_top" style="margin-left: 0;margin-right: 0;">
+			<div class="col-md-4">
+				<div class="box">
+					<a href="proCenter.html"><img src="images/sheji.png" alt="产品设计方案"></a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="box bgOne delay200">
+					<a href="test.html"><img src="images/ceshi.png" alt="产品测试方案"></a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="box bgTwo delay400">
+					<a href="module.html"><img src="images/mokuai.png" alt="核心功能模块"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container prowrap">
+		<div class="kouhao text-center h1">强大的技术 + 贴心的服务 = 客户满意</div>
+		<div class="xuanze">
+			<a href="proCenter.html"><img src="images/xz.jpg" alt="立全静候您的选择"></a>
+		</div>
+		<div class="row m_top">
+			<div class="col-md-4">
+				<div class="box bgThtee">
+					<a href="proCenter.html"><img src="images/pro1.png" alt="IP同轴方案"></a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="box bgFour">
+					<a href="proCenter.html"><img src="images/pro2.png" alt="千兆光汇聚交换机"></a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="box bgFive">
+					<a href="proCenter.html"><img src="images/pro3.png" alt="工业环网交换机"></a>
+				</div>
+			</div>
+		</div>
+		<div class="more"><a href="proCenter.html">查看更多产品</a></div>
+	</div>
+	<div>
+		<div class="bg-large hidden-xs">
+			<div class="container">
+				<img src="images/sj.png" alt="经营理念">
+			</div>
+		</div>
+		<div>
+			<div class="container">
+				<div class="kouhao text-center h1 m_top">战略合作伙伴</div>
+				<div id="demo" class="m_top" style="overflow:hidden;height:82px;width:100%; background-color:Silver">
+	        		<table cellspacing="0" cellpadding="0" border="0">
+	        			<tr>
+	        				<td id="demo1">
+	        					<table width="1200px" border="0" cellspacing="0" cellpadding="0">
+	            					<tr>
+				              			<td><img src="images/f01.jpg"></td>
+							            <td><img src="images/f02.jpg"></td>
+							            <td><img src="images/f03.jpg"></td>
+							            <td><img src="images/f04.jpg"></td>
+							            <td><img src="images/f05.jpg"></td>
+							            <td><img src="images/f06.jpg"></td>
+							            <td><img src="images/f07.jpg"></td>
+										<td><img src="images/f08.jpg"></td>
+										<td><img src="images/f09.jpg"></td>
+										<td><img src="images/f10.jpg"></td>
+										<td><img src="images/f11.jpg"></td>
+										<td><img src="images/f12.jpg"></td>
+										<td><img src="images/f13.jpg"></td>
+							        </tr>
+							    </table>
+							</td>
+					        <td id="demo2">
+					        	<table width="1200px" border="0" cellspacing="0" cellpadding="0">
+					            	<tr>
+						                <td><img src="images/f01.jpg"></td>
+						                <td><img src="images/f02.jpg"></td>
+						                <td><img src="images/f03.jpg"></td>
+						                <td><img src="images/f04.jpg"></td>
+						                <td><img src="images/f05.jpg"></td>
+						                <td><img src="images/f06.jpg"></td>
+						                <td><img src="images/f07.jpg"></td>
+									    <td><img src="images/f08.jpg"></td>
+									    <td><img src="images/f09.jpg"></td>
+									    <td><img src="images/f10.jpg"></td>
+									    <td><img src="images/f11.jpg"></td>
+									    <td><img src="images/f12.jpg"></td>
+									    <td><img src="images/f13.jpg"></td>
+					            	</tr>
+					    		</table>
+							</td>
+					    </tr>
+					</table>
+			        <script language="javascript" type="text/javascript">
+			            var speed =30
+			            var MyMar = setInterval(Marquee, speed)
+			            var demo_ = document.getElementById("demo");//用getElememtById是为了兼容FF
+			            var demo2_ = document.getElementById("demo2");
+			            var demo1_ = document.getElementById("demo1");
+			            demo2_.innerHTML = demo1_.innerHTML
+			            demo.onmouseover =function () { clearInterval(MyMar) }
+			            demo.onmouseout =function () { MyMar = setInterval(Marquee, speed) }
+			            function Marquee() {
+			                if (demo2_.offsetWidth - demo_.scrollLeft <=0)
+			                    demo_.scrollLeft -= demo1_.offsetWidth
+			                else {
+			                    demo_.scrollLeft++
+			                }
+			            }
+			        </script>
+	            </div>
+			</div>
+		</div>
+		<div class="container m_top">
+			<div class="row m_top">
+				<div class="col-md-4">
+					<div class="morebox">
+						<a href="news.html"><img src="images/news.jpg" alt="新闻中心"></a>
+					</div>
+					<div class="h3 text-center"><a href="news.html">新闻中心</a></div>
+					<p class="text-right"><a href="news.html">了解更多 »</a></p>
+				</div>
+				<div class="col-md-4">
+					<div class="morebox">
+						<a href="RD.html"><img src="images/yanfa.jpg" alt="研发支持"></a>
+					</div>
+					<div class="h3 text-center"><a href="RD.html">研发支持</a></div>
+					<p class="text-right"><a href="RD.html">了解更多 »</a></p>
+				</div>
+				<div class="col-md-4">
+					<div class="morebox">
+						<a href="proCenter.html"><img src="images/zhanshi.jpg" alt="展品展示"></a>
+					</div>
+					<div class="h3 text-center"><a href="proCenter.html">解决方案</a></div>
+					<p class="text-right"><a href="proCenter.html">了解更多 »</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hidden-xs hidden-sm">
+		<div class="ge m_top">
+			<div class="container">
+				<p>Copyright © 2019 Inc. 深圳市立全鼎盛科技有限公司 版权所有  <a href="http://www.beian.miit.gov.cn" target="blank">粤ICP备20009652号</a></p>
+				<p>深圳公司：深圳市南山区西丽街道留仙大道2188号天悦湾花园A座二楼，电话：+86-0755-86230648，传真：+86-0755-86237869，投诉：13602589060</p>
+				<p>香港分公司：香港九龙黄大仙区斑凤楼2018室，电话：+852-35928633，传真：+852-35928635 ，邮址：info@ritern.com</p>
+				<div class="guanzhu">
+					<p>关注我们</p>
+					<a href="https://shop235274273.taobao.com/?spm=a230r.7195193.1997079397.2.25103af5dx5Oij" target="blank"><img src="images/tao.jpg" alt="淘宝店铺" title="淘宝小店"></a>
+					<a class="deng" href="javascript:void(0)" target="blank"><img src="images/jing.jpg" alt="京东店铺" title="敬待开业"></a>
+					<a class="deng" href="javascript:void(0)" target="blank"><img src="images/tian.jpg" alt="天猫店铺" title="敬待开业"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/public.js"></script>
+<script>
+	var windowWidth = $(window).width();
+	if(windowWidth < 768){
+	    $("#nav").removeClass('fixed');
+	    $("#nav .col-md-1 a").css("color","black");
+	}else{
+		$(window).scroll(function() {
+			if($(window).scrollTop()>33){
+				$("#nav img").attr('src','images/logo.png');
+	            $("#nav .col-md-1>span>a").css('color','#222');
+			}else{
+				$("#nav img").attr('src','images/logo2.png');
+	            $("#nav .col-md-1>span>a").css('color','#fff');
+			}
+		})
+	}
+</script>
+</body>
+</html>

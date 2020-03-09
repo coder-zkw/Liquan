@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>产品测试管理</title>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<link rel="stylesheet" href="css/page.css" />
+	<!-- <script src="http://libs.baidu.com/jquery/1.8.1/jquery.min.js"></script> -->
+	<!-- <script src="https://cdn.bootcss.com/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js"></script> -->
+<style>
+	body{padding: 20px;}
+</style>
+</head>
+<body onload="ajax();back();">
+	<div class="nav">
+		<span class="active">添加产品</span><span>产品管理</span>
+	</div>
+	<div class="news">
+		<div class="increase">
+			<form action="protest.php" method="post" enctype="multipart/form-data" >
+				<div class="title">产品类别：
+					<select name="protype" id="protype">
+						<option value="0">网络测试仪</option>
+						<option value="1">数字示波器</option>
+						<option value="2">函数任意波形发生器</option>
+						<option value="3">数字万用表</option>
+						<option value="4">可编程线性电源</option>
+						<option value="5">频谱分析仪</option>
+						<option value="6">高效液相色谱系统</option>
+						<option value="7">核心功能模块</option>
+					</select><span> *</span>
+				</div>
+				<div class="title">产品名称：
+					<input type="text" name="proname" class="proname"><span> *</span>
+				</div>
+				<div class="pros">产品说明：
+					<textarea name="state" cols="80" rows="10"></textarea><span> *</span>
+				</div>
+				<div class="pros">产品特性：
+					<textarea name="charact" cols="80" rows="10"></textarea>
+				</div>
+				<div class="file">上传图片：
+					<input type="file" name="files"><span>(500*280px最佳)</span>
+				</div>
+				<div class="btn">
+					<input type="button" value="取消">
+					<input type="submit" value="提交" >
+				</div>
+			</form>
+		</div>
+		<div class="manage">
+			<div class="box">
+				<form method="post" action="deltest.php">
+					<table>
+						<tr class="tabhead">
+							<td>ID</td>
+							<td>产品类别</td>
+							<td>产品名称</td>
+							<td>产品说明</td>
+							<td>产品特性</td>
+							<td>图片信息</td>
+							<td>操作</td>
+						</tr>
+					</table>
+					<input type="hidden" name="index" value="@">
+				</form>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/index.js" ></script>
+<script>
+	$(".btn>input[type='submit']").click(function() {
+		if($(".proname").val() == ""){
+			alert("请输入产品名称！");
+			return false;
+		}else if($(".pros>textarea").val() == ""){
+			alert("请输入产品说明！");
+			return false;
+		}else if($(".file>input").val() == ""){
+			alert("请选择图片！");
+			return false;
+		}else{
+			alert("添加成功，可在产品管理查看");
+		}
+	})
+
+	function ajax() { 
+		var url = "gettest.php?no-cache="+ Math.random();
+		$.ajax({
+			type:'GET',
+			url:url,
+			dataType:"json",
+			success:function(json) {
+				analyJson(json);
+			},
+			error:function(err) {
+				alert(err);
+			}
+		})
+	}
+
+	function addNews(id,ptype,pname,sta,char,pic) {
+		var row = "<tr><td class='index'>"+id+"</td><td><div class='tit'>"+ptype+"</div></td><td><div class='tit'>"+pname+"</div></td><td><div class='tit'>"+sta+"</div></td><td><div class='tit'>"+char+"</div></td><td><div class='tit'>"+pic+"</div></td><td><input type='button' value='删除'></td></tr>"
+		$(".manage table").append(row);
+	}
+	function analyJson(json) {
+		for(var i = 0; i < json.length; i++){
+			addNews(json[i]['id'],json[i]['protype'],json[i]['proname'],json[i]['state'],json[i]['charact'],json[i]['picture']);
+		}
+	}
+</script>
+</body>
+</html>

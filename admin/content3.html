@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻管理</title>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<style>
+	html,body{margin: 0;padding: 0;}
+	.user>div{
+		margin: 50px;
+	}
+	.user label{
+		display: inline-block;
+		width: 100px;
+		text-align: right;
+	}
+	.btn>input[type='submit']{margin: 10px 274px;}
+</style>
+</head>
+<body onload="back();">
+	<div class="user">
+		<div>
+			<h4>用户密码修改：</h4>
+		</div>
+		<div>
+			<label>用户名：</label><input type="text" name="user" class="username">
+			<label>原始密码：</label><input type="password" name="password" class="userpass">
+		</div>
+		<div>
+			<label>新密码：</label><input type="password" name="newpass" class="newpass">
+			<label>确认密码：</label><input type="password" name="newpassword" class="newpassword">
+		</div>
+		<div class="btn"><input type="submit" value="提交"></div>
+	</div>
+<script type="text/javascript" src="js/index.js" ></script>
+<script>
+	$('.btn>input').click(function() {
+		if($('.username').val() == ""){
+			alert('用户名不能为空！')
+		}else if($('.userpass').val() == ""){
+			alert('原始密码不能为空！')
+		}else if($('.newpass').val() == ""){
+			alert('请输入新密码！')
+		}else if($('.newpass').val() != $('.newpassword').val()){
+			alert('两次输入密码不一致！')
+		}else{
+			$.ajax({
+				url:'changepass.php',
+				type:'POST',
+				data: 'user='+$('.username').val()+'&password='+$('.userpass').val()+'&newpass='+$('.newpass').val(),
+				success:function(str) {
+					alert(str);
+				},
+				error:function(err) {
+					alert(err);
+				}
+			})
+		}
+	})
+</script>
+</body>
+</html>

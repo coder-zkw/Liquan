@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻管理</title>
+	<link rel="stylesheet" href="css/page.css" />
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+<style>
+	body{padding: 20px;}
+	.increase div{
+		margin:50px;
+	}
+	.tit{
+		width: 200px;
+	}
+	.box{
+		width: 100%;
+		height: 621px;
+		overflow: auto;
+	}
+</style>
+</head>
+<body onload="ajax();back();">
+	<div class="nav">
+		<span class="active">添加新闻</span><span>新闻管理</span>
+	</div>
+	<div class="news">
+		<div class="increase">
+			<form action="news.php" method="post" enctype="multipart/form-data">
+				<div class="title">新闻标题：
+					<input type="text" name="title"><span> *</span>
+				</div>
+				<div class="pros">新闻内容：
+					<textarea name="newswords" id="newswords" cols="80" rows="10"></textarea><span> *</span>
+				</div>
+				<div class="file">上传图片：
+					<input type="file" name="files"><span> (780*550px最佳)</span>
+				</div>
+				<div class="time">发布时间：
+					<input type="date" name="time"><span> *</span>
+					<!--[if IE]>
+					<span> (自定义格式：2020-02-02)</span>
+					<![endif]-->
+				</div>
+				<div class="btn">
+					<input type="button" value="取消">
+					<input type="submit" value="提交" >
+				</div>
+			</form>
+		</div>
+		<div class="manage">
+			<div class="box">
+				<form method="post" action="delnews.php">
+					<table>
+						<tr class="tabhead">
+							<td>ID</td>
+							<td>新闻标题</td>
+							<td>新闻内容</td>
+							<td>图片地址</td>
+							<td>发布时间</td>
+							<td>操作</td>
+						</tr>
+					</table>
+					<input type="hidden" name="index" value="@">
+				</form>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/index.js" ></script>
+<script>
+	$(".btn>input[type='submit']").click(function() {
+		if($(".title>input").val() == ""){
+			alert("新闻标题不能为空！");
+			return false;
+		}else if($("#newswords").val() == ""){
+			alert("新闻内容不能为空！");
+			return false;
+		}else if($(".time>input").val() == ""){
+			alert("新闻时间不能为空！");
+			return false;
+		}else{
+			alert("添加成功，可在新闻管理查看");
+		}
+	})
+
+	function ajax() {
+		var url = "getnews.php?no-cache="+ Math.random();
+		$.ajax({
+			type:'GET',
+			url:url,
+			dataType:"json",
+			success:function(json) {
+				analyJson(json);
+			},
+			error:function(err) {
+				alert(err);
+			}
+		})
+	}
+
+	function addNews(id,tit,words,pic,tim) {
+		var row = "<tr><td class='index'>"+id+"</td><td><div class='tit'>"+tit+"</div></td><td><div class='tit'>"+words+"</div></td><td><div class='tit'>"+pic+"</div></td><td>"+tim+"</td><td><input type='button' value='删除'></td></tr>"
+		$(".manage table").append(row);
+	}
+	function analyJson(json) {
+		for(var i = 0; i < json.length; i++){
+			addNews(json[i]['Id'],json[i]['title'],json[i]['newsword'],json[i]['picture'],json[i]['dates']);
+		}
+	}
+</script>
+</body>
+</html>

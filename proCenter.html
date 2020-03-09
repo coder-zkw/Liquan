@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>产品中心</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/basic.css">
+<style>
+	.box{border:1px solid #bbb;border-radius:3px;text-align: center;padding:12px;overflow: hidden;}
+	.box>a>img{width: 230px;}
+	.morebox{overflow: hidden;}
+	img{padding:0;transition: all 500ms;}
+	.box:hover img,.morebox:hover img{transform: scale(1.1);}
+	.m_left{margin-left: 20px;}
+	.h4,.h4>a{color:#4178be;}
+	.more{margin:15px auto;width:120px;height:40px;border: 3px solid #999;border-radius: 3px;text-align: center;line-height: 36px;}
+	.probox{
+		width:260px;
+		display: inline-block; 
+		margin-right: 21px;
+	}
+	.probox a{cursor:pointer;}
+</style>
+<!--[if IE 8]>
+	<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+<body onload="ajax();">
+	<div class="headtop hidden-xs hidden-sm">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10"><i class="glyphicon glyphicon-phone-alt"></i> 热线电话：+86-0755-86230648 | 13602589060 
+					<span class="qq"><a target="blank" href="tencent://message/?uin=765803545&Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:765803545:41" alt="发送消息!"></a></span>
+					<span class="wei"><i></i></span>
+					<a class="tao" href="https://shop235274273.taobao.com/?spm=a230r.7195193.1997079397.2.25103af5dx5Oij" target="blank" title="淘宝小店"></a>
+					<a class="jing" href="javascript:void(0)" target="blank" title="敬待开业"></a>
+					<a class="tian" href="javascript:void(0)" target="blank" title="敬待开业"></a>
+				</div>
+				<div class="col-md-2">
+					<span class="eng"></span>
+					<span class="zhong"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 hidden-xs">
+					<a href="index.html"><img src="images/logo.png" alt="立全鼎盛"></a>
+				</div>
+				<div class="col-md-1">
+					<span><a href="index.html">首页</a></span>
+					<span class="close"><i class="glyphicon glyphicon-remove"></i></span>
+				</div>
+				<div class="col-md-1">
+					<span><a href="about.html">关于我们</a></span>
+					<ul>
+						<li><a href="about.html">公司简介</a></li>
+						<li><a href="history.html">公司历程</a></li>
+						<li><a href="honor.html">资质荣誉</a></li>
+					</ul>
+				</div>
+				<div class="col-md-1"><span><a href="news.html">新闻中心</a></span></div>
+				<div class="col-md-1"><span><a href="RD.html">研发支持</a></span></div>
+				<div class="col-md-1">
+					<span><a href="proCenter.html">产品中心</a></span>
+					<ul>
+						<li><a href="proCenter.html">产品设计方案</a></li>
+						<li><a href="test.html">产品测试方案</a></li>
+						<li><a href="module.html">核心功能模块</a></li>
+					</ul>
+				</div>
+				<div class="col-md-1"><span><a href="recruit.html">加入我们</a></span></div>
+				<div class="col-md-1">
+					<span><a href="contact.html">联系我们</a></span>
+					<ul>
+						<li><a href="contact.html">公司与办事处</a></li>
+						<li><a href="cooperation.html">商务合作</a></li>
+						<li><a href="feedback.html">问题反馈</a></li>
+					</ul>
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="icon"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+		</div>
+	</div>
+	<!-- nav over -->
+	<!-- content start -->
+	<div class="wrap">
+		<div class="place">
+			<div class="container">
+				<i class="glyphicon glyphicon-home"></i> 当前位置：
+				<span><a href="index.html">首页</a></span> - <a href="proCenter.html">产品中心</a> - 产品设计方案
+			</div>
+		</div>
+		<img src="images/pro-cen.jpg" alt="合作共赢">
+		<div class="hezuo">
+			<div></div>
+		</div>
+		<div class="container">
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 工业环网交换机方案</div>
+			<p>工业环网交换机带有自愈环，其环网具有冗余性、可靠性等优点，环网上的某一路链路断开，不会影响网络上数据的转发。自愈环，按通信协议可分为：私有环、公有环两种；按网络结构可分为：单环、相交环、链式环、双归环。它具有七大特点：①网络故障可自愈的高可靠性，能保证网络通信顺畅；②IEEE802.3/802.3d/802.3u/802.3x，存储转换交换方式；③具有抑制广播风暴功能、端口链路告警信息、电源故障信息继电器输出功能；④采用12~48VDC双冗余电源供电；⑤工作温度-40~+85℃（宽温）；⑥采用金属外壳，一般为铝合金外壳；⑦防护等级IP40，带有PoE+。</p>
+			<p>我司工业环网交换机包括：7FE+3GE光、8GE电+2GE光、7GE电+3XG光、4GE电+3GE光+3XG光。</p>
+			<small class="text-danger">备注：普通以太网交换机不能做环形的网络，因为链路一旦成环形，就会产生广播风暴，使交换机无法正常工作。</small>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 二层网管交换机方案</div>
+			<p>二层网管交换机，指仅支持数据链路层协议的、可通过Web进行管理的交换机。在该交换机指定的IP地址的页面下，可对交换机进行VLAN划分、端口速率管制、端口汇聚、镜像配置等管理。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 多光口交换机方案</div>
+			<p>我司的多光交换机，光口数涵盖8光、16光、24光，速率涵盖百兆、千兆、万兆，管理能力分傻瓜可配置型、网管型。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 傻瓜型可配置多功能交换机方案</div>
+			<p>我司的傻瓜型可配置多功能交换机，端口数涵盖2/4/5/8/10/16/24/28端口，速率涵盖百兆、千兆、万兆。可通过拨码开关，实现网线超长距离250米传输、跨设备端口隔离、视频传输、VLAN划分、光口速率选择等工作模式。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> L2+网管型交换机方案</div>
+			<p>L2+网管型交换机，是指支持部分三层功能的网管交换机，比二层交换机功能更强大。在该交换机指定的IP地址的页面下，可对交换机进行VLAN划分、端口速率管制、端口汇聚、镜像配置、ERPS、接入安全管制等管理。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> POE交换机方案</div>
+			<p>目前我司PoE交换机基本是支持PoE+的，支持802.3af和802.3at协议，单端口最大功率可达36瓦，带有电源管理模式。全面涵盖各类电口交换机，全部采用PoE与非PoE的共Lay设计。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 工业互联网网关解决方案</div>
+			<p> 我司推出的工业互联网网关方案，支持6个千兆端口、RS232/485串口、USB、Wi-Fi、ZigBee、LTE、PoE+等功能，支持多种物联网协议，提供丰富物联网接口，方便连接各种传感器和物联网设备，适合部署边缘分析，进行数据过滤，防止海量无用数据涌向数据中心和云端。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 光纤收发器(千兆、万兆)</div>
+			<p>光纤收发器是光电媒介转换的通信设备，我司早在2003年就推出千兆光纤收发器，2017年推出万兆光纤收发器，我司设计的光纤收发器以性能稳定、功能新颖为最大特点。</p>
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 协议转网卡解决方案</div>
+			<p>包括各类以太网转E1、232/485/422串口、CAN、USB等的串口服务器或协议转换器。</p>
+		</div>
+		<img src="images/sheji1.jpg" alt="">
+		<div class="container designwrap m_top">
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 热门设计方案</div>
+			
+		</div>
+		<div class="container">
+			<div class="h4 m_top"><i class="glyphicon glyphicon-book"></i> 更多设计方案</div>
+			<p>因页面篇幅有限，更多设计方案，请与我们销售部联系。</p>
+		</div>
+	</div>
+	<!-- content over -->
+	<div class="hidden-xs hidden-sm">
+		<div class="ge m_top">
+			<div class="container">
+				<p>Copyright © 2019 Inc. 深圳市立全鼎盛科技有限公司 版权所有  <a href="http://www.beian.miit.gov.cn" target="blank">粤ICP备20009652号</a></p>
+				<p>深圳公司：深圳市南山区西丽街道留仙大道2188号天悦湾花园A座二楼，电话：+86-0755-86230648，传真：+86-0755-86237869，投诉：13602589060</p>
+				<p>香港分公司：香港九龙黄大仙区斑凤楼2018室，电话：+852-35928633，传真：+852-35928635 ，邮址：info@ritern.com</p>
+				<div class="guanzhu">
+					<p>关注我们</p>
+					<a href="https://shop235274273.taobao.com/?spm=a230r.7195193.1997079397.2.25103af5dx5Oij" target="blank"><img src="images/tao.jpg" alt="淘宝店铺"></a>
+					<a class="deng" href="javascript:void(0)" target="blank"><img src="images/jing.jpg" alt="京东店铺" title="敬待开业"></a>
+					<a class="deng" href="javascript:void(0)" target="blank"><img src="images/tian.jpg" alt="天猫店铺" title="敬待开业"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/public.js"></script>
+<script src="js/procenter.js"></script>
+<script>
+	function addDesign(id,pro,pic) {
+		var newdesign = '<div class="probox"><form action="details1.html" method="get"><div class="h4 text-center"><a>'+pro+'</a></div><div class="box"><a><img src="updateImages/'+pic+'" alt="暂无图片"></a></div><div class="more"><a>了解更多</a></div><input type="hidden" name="index" value="'+id+'"></form></div>';
+		$(".designwrap").append(newdesign);
+	}
+</script>
+</body>
+</html>

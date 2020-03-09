@@ -1,0 +1,144 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.left {
+	background: #313541;
+	width: 20%;
+	height: 938px;
+	float: left;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+}
+
+.top {
+	width: 80%;
+	float: right;
+	height: 100px;
+	line-height: 100px;
+	border-bottom: 1px solid #b0cdff;
+}
+
+.content {
+	float: right;
+	width: 80%;
+	text-align: center;
+	font-size: 40px;
+	background: #fff;
+}
+
+.leftTiyle {
+	font-size: 25px;
+	padding-left: 30px;
+	font-weight: 600;
+	color: #545454;
+	float: left;
+}
+
+.thisUser {
+	float: right;
+	margin-right: 30px;
+}
+
+.bigTitle {
+	background: #3d598a;
+	color: #fff;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 24px;
+	font-family: -webkit-body;
+}
+
+.lines .active {
+	background: #272a34;
+	color: #fff;
+}
+.lines img{
+    width: 23px;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    margin-right: 9px;
+}
+.lines div {
+	height: 70px;
+	line-height: 70px;
+	padding-left: 50px;
+	color: #707783;
+}
+
+.lines div:hover {
+	cursor: pointer;
+	color: #FFFFFF;
+}
+/* content css */
+.nav{
+	width: 100%;
+	height: 49px;
+}
+.nav>span{
+	display: inline-block;
+	width: 80px;
+	height: 49px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+span.active{
+	border: 1px solid #aaa;
+	border-bottom: 0;
+	border-radius: 5px 5px 0 0;
+	background: #fff;
+}
+.news{
+	border: 1px solid #aaa;
+	height: 700px;
+	border-radius: 0 5px 5px 5px;
+}
+.increase .title,.increase .pros,.increase .file{
+	margin: 30px 50px;
+}
+.increase span{
+	font-size: 12px;
+	color:red;
+}
+.pros>textarea{
+	vertical-align: top;
+}
+.increase .btn{
+	padding-left: 300px;
+}
+.title>input{
+	width: 50%;
+}
+.pros>textarea{
+	width: 70%;
+}
+.manage table{
+	width: 1000px;
+	text-align: center;
+	border-collapse: collapse;
+}
+.manage{
+	margin: 40px auto;
+	width: 1020px;
+	overflow: auto;
+}
+td{
+	border: 1px solid #aaa;
+	font-size: 12px;
+}
+.tit{
+	width: 120px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+.tabhead{background: #aebbcb;}
+.box{
+		width: 100%;
+		height: 621px;
+		overflow: auto;
+	}

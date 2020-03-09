@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片、备案号更新</title>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<style>
+	html,body{margin: 0;padding: 0;}
+	.title{display:inline-block; margin-bottom: 15px;}
+	body{padding: 20px;}
+	.images>div{
+		margin-bottom: 10px;
+		padding-bottom: 2px;
+		border-bottom: 1px dotted #ccc;
+	}
+	.images img{width: 200px;vertical-align: middle;margin-left: 10px;}
+	.record_wrap{margin-top: 80px;}
+	.tics{font-size: 12px;}
+	.record_wrap button{margin-left: 16px;}
+</style>
+</head>
+<body onload="back();">
+	<form action="updateImg.php" method="post" enctype="multipart/form-data">
+		<div class="images">
+			<span class="title">请选择要更新的图片：</span>
+			<div>
+				<input type="checkbox">
+				<span>轮播图1</span>
+				<img src="../images/ban1.jpg" alt="轮播图1">
+			</div>
+			<div>
+				<input type="checkbox">
+				<span>轮播图2</span>
+				<img src="../images/ban2.jpg" alt="轮播图2">
+			</div>
+			<div>
+				<input type="checkbox">
+				<span>轮播图3</span>
+				<img src="../images/ban3.jpg" alt="轮播图3">
+			</div>
+			<div>
+				<input type="checkbox">
+				<span>轮播图4</span>
+				<img src="../images/ban4.jpg" alt="轮播图4">
+			</div>
+			<div>
+				<input type="checkbox">
+				<span>背景图&nbsp;&nbsp;</span>
+				<img src="../images/bg.jpg" alt="背景图">
+			</div>
+			<span class="title">请选择新的图片：</span>
+			<input class="imgUp" type="file" name="files">
+			<input class="indexVal" type="hidden" name="index" value="">
+			<input class="btn" type="button" value="提交">
+		</div>
+	</form>
+	<form action="changeRecord.php" method="POST">
+		<div class="record_wrap">
+			<span>更新备案号：</span>
+			<input type="number" name="record">
+			<span class="tics">(只输入备案号码)</span>
+			<button>确定</button>
+		</div>
+	</form>
+<script type="text/javascript" src="js/index.js" ></script>
+<script>
+	var checks = $('.images input[type=checkbox]');
+	checks.click(function() {
+		var checkVal = $(this).prop('checked');
+		$(this).parent().siblings().find('input').prop('disabled', checkVal);
+	})
+
+	$('.btn').click(function() {
+		for(var i = 0; i < checks.length; i++) {
+			if(checks.eq(i).prop('checked')){
+				// 截取选中图片的src地址截取图片名称
+				var imgName = checks.eq(i).next().next().attr('src').substring(10);
+				$('.indexVal').val(imgName);
+				break;
+			}
+		}
+		if($('.indexVal').val() === '') {
+			alert('请选择要更新的图片！');
+			return;
+		}
+		if(!$('.imgUp').val()) {
+			alert('请选择新的图片！');
+			return;
+		};
+		$('.images').parent().submit();
+	})
+</script>
+</body>
+</html>

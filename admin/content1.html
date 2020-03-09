@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>产品设计管理</title>
+	<link rel="stylesheet" href="css/page.css" />
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+<style>
+	body{padding: 20px;}
+</style>
+</head>
+<body onload="ajax();back();">
+	<div class="nav">
+		<span class="active">添加产品</span><span>产品管理</span>
+	</div>
+	<div class="news">
+		<div class="increase">
+			<form action="prodesign.php" method="post" enctype="multipart/form-data" >
+				<div class="title">产品名称：
+					<input type="text" name="proname" class="proname"><span> *</span>
+				</div>
+				<div class="title">方案名称：
+					<input type="text" name="designname" class="designname"><span> *</span>
+				</div>
+				<div class="title">产品类型：
+					<input type="text" name="protype" class="protype"><span> *</span>
+				</div>
+				<div class="pros">产品特点：
+					<textarea name="tedian" cols="80" rows="10"></textarea><span> *</span>
+				</div>
+				<div class="pros">产品优势：
+					<textarea name="youshi" cols="80" rows="10"></textarea><span> *</span>
+				</div>
+				<div class="title">备注信息：
+					<input type="text" name="remark">
+				</div>
+				<div class="file">上传图片：
+					<input type="file" name="files[]" multiple><span>(550*336px最佳)</span>
+				</div>
+				<div class="btn">
+					<input type="button" value="取消">
+					<input type="submit" value="提交" >
+				</div>
+			</form>
+		</div>
+		<div class="manage">
+			<div class="box">
+				<form method="post" action="deldesign.php">
+					<table>
+						<tr class="tabhead">
+							<td>ID</td>
+							<td>产品名称</td>
+							<td>方案名称</td>
+							<td>产品类型</td>
+							<td>产品特点</td>
+							<td>产品优势</td>
+							<td>备注信息</td>
+							<td>图片信息</td>
+							<td>操作</td>
+						</tr>
+					</table>
+					<input type="hidden" name="index" value="@">
+				</form>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/index.js" ></script>
+<script>
+	$(".btn>input[type='submit']").click(function() {
+		if($(".proname").val() == ""){
+			alert("请输入产品名称！");
+			return false;
+		}else if($(".designname").val() == ""){
+			alert("请输入方案名称！");
+			return false;
+		}else if($(".protype").val() == ""){
+			alert("请输入产品类型！");
+			return false;
+		}else if($(".tedian").val() == ""){
+			alert("请输产品特点！");
+			return false;
+		}else if($(".youshi").val() == ""){
+			alert("请输入产品优势！");
+			return false;
+		}else{
+			alert("添加成功，可在产品管理查看");
+		}
+	})
+
+	function ajax() { 
+		var url = "getdesign.php?no-cache="+ Math.random();
+		$.ajax({
+			type:'GET',
+			url:url,
+			dataType:"json",
+			success:function(json) {
+				analyJson(json);
+			},
+			error:function(err) {
+				alert(err);
+			}
+		})
+	}
+
+	function addDesign(id,pname,dname,ptype,tra,adv,rem,pic1,pic2) {
+		var row = "<tr><td class='index'>"+id+"</td><td><div class='tit'>"+pname+"</div></td><td><div class='tit'>"+dname+"</div></td><td><div class='tit'>"+ptype+"</div></td><td><div class='tit'>"+tra+"</div></td><td><div class='tit'>"+adv+"</div></td><td><div class='tit'>"+rem+"</div></td><td><div class='tit'>"+pic1+pic2+"</div></td><td><input type='button' value='删除'></td></tr>"
+		$(".manage table").append(row);
+	}
+	function analyJson(json) {
+		for(var i = 0; i < json.length; i++){
+			addDesign(json[i]['id'],json[i]['proname'],json[i]['designname'],json[i]['protype'],json[i]['trait'],json[i]['advantage'],json[i]['remark'],json[i]['picture1'],json[i]['picture2']);
+		}
+	}
+</script>
+</body>
+</html>

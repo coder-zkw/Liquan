@@ -1,0 +1,79 @@
+.wrap p{
+	text-indent: 3em;
+}
+.history{
+	margin-left: 270px;
+	position: relative;
+}
+.history:before{
+	content: "";
+	height: 100%;
+	border-left: 1px dashed #ccc;
+	position: absolute;
+	left: 82px;
+	top:0;
+}
+.icobox{
+	width: 64px;
+	height: 64px;
+	float: left;
+	text-align: center;
+	line-height: 64px;
+}
+.icobox>i{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: #e5f5fb;
+	border-radius: 50%;
+	line-height: 32px;
+	color:#fff;
+}
+i.active{
+	animation: tobig 1s linear forwards;
+}
+i.active.delay200{
+	animation: tobig 1s linear 300ms forwards;
+}
+i.active.delay400{
+	animation: tobig 1s linear 600ms forwards;
+}
+i.active.delay600{
+	animation: tobig 1s linear 900ms forwards;
+}
+i.active.delay800{
+	animation: tobig 1s linear 1200ms forwards;
+}
+i.active.delay1000{
+	animation: tobig 1s linear 1500ms forwards;
+}
+i.active.delay1200{
+	animation: tobig 1s linear 1800ms forwards;
+}
+i.active.delay1400{
+	animation: tobig 1s linear 2100ms forwards;
+}
+i.active.delay1600{
+	animation: tobig 1s linear 2400ms forwards;
+}
+@keyframes tobig{
+	from{
+		width: 32px;
+		height: 32px;
+		font-size: 14px;
+		background: #e5f5fb;
+	}
+	to{
+		width: 64px;
+		height: 64px;
+		font-size: 18px;
+		background: #00a0df;
+		line-height: 64px;
+	}
+}
+.year{float: left;position: absolute;left: 150px;}
+.history>li{
+	height: 160px;
+	margin: 20px 10px;
+	overflow: hidden;
+}
